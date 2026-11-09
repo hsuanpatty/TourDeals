@@ -697,6 +697,10 @@ p {
   .cruise-highlight p {
     font-size: 16px;  
   }
+
+  .cruise-highlight p + p {
+    margin-top: 3px;
+  }
 }
 
 /* 價錢與按鈕 */
