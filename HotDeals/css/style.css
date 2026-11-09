@@ -1174,3 +1174,87 @@ footer a {
     display: none;
   }
 }
+
+/* ========================================
+   手機版修正：行程標題與副標題完整顯示
+   保留原本桌機版、卡片圖片與整體視覺設定
+======================================== */
+@media (max-width: 767.98px) {
+  /* 卡片高度依內容自動延伸，避免文字區被卡片高度裁切 */
+  .mitsu-box {
+    height: auto;
+    min-height: 0;
+    grid-template-rows: auto auto;
+  }
+
+  .card-content {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .card-content > a {
+    display: block;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    overflow: visible;
+  }
+
+  /* 行程標題：取消原本固定高度及兩行裁切 */
+  .card-content h1 {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: initial;
+    line-clamp: unset;
+    line-height: 1.5;
+    padding-bottom: 0;
+  }
+
+  /* 行程副標題：允許換行，避免文字被固定高度裁切 */
+  .card-content > a > p:not(.gift-red) {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: initial;
+    line-clamp: unset;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  /* 優惠區塊維持兩行內容與原本留白 */
+  .card-content .cruise-highlight {
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .card-content .cruise-highlight p {
+    display: block;
+    height: auto;
+    min-height: 0;
+    margin-bottom: 0;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* 日期列依內容自然延伸 */
+  .card-content .card-d {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+}
