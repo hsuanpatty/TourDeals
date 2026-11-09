@@ -623,8 +623,8 @@ p {
 .cruise-highlight {
   display: block;
   width: fit-content;
-  width: 95%;
-  max-width: 95%;
+  width: 98%;
+  max-width: 98%;
   box-sizing: border-box;
   overflow: hidden;
   background-color: var(--m3-blue);
